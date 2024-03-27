@@ -1,0 +1,7 @@
+.history
+public/
+dist/
+mock/
+node_modules/
+*.d.ts
+eslint.config.js

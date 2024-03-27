@@ -1,0 +1,55 @@
+{
+  "name": "@metalist/webpack-plugin-blob-storage",
+  "version": "1.0.0",
+  "description": "Webpack plugin for uploading files to Azure Blob Storage.",
+  "author": "Neo Chang",
+  "license": "MIT",
+  "keywords": [
+    "webpack",
+    "webpack-plugin",
+    "azure",
+    "blob"
+  ],
+  "homepage": "hhttps://github.com/chang0022/webpack-plugin-blob-storage",
+  "repository": "https://github.com/chang0022/webpack-plugin-blob-storage",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./*": "./*"
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "types": "index.d.ts",
+  "files": [
+    "*.d.ts",
+    "dist"
+  ],
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "build": "tsup src/index.ts --dts --format cjs,esm",
+    "prepublishOnly": "npm run build",
+    "build:link": "npm run build && npm link"
+  },
+  "peerDependencies": {
+    "webpack": ">=5.0.0"
+  },
+  "dependencies": {
+    "@azure/storage-blob": "^12.17.0",
+    "micromatch": "^4.0.5",
+    "mime-types": "^2.1.35"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.8.1",
+    "@types/micromatch": "^4.0.6",
+    "@types/mime-types": "^2.1.4",
+    "@types/node": "^20.11.27",
+    "chalk": "^5.3.0",
+    "eslint": "^8.57.0",
+    "tsup": "^8.0.2",
+    "typescript": "^5.4.2"
+  }
+}
