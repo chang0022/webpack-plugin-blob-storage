@@ -19,10 +19,7 @@ function getBlobServiceClientWithToken(accountName: string, sasToken: string) {
 }
 
 async function createContainer(containerName: string, blobServiceClient: BlobServiceClient): Promise<ContainerClient> {
-  const containerClient = blobServiceClient.getContainerClient(containerName);
-  await containerClient.createIfNotExists();
-
-  return containerClient;
+  return blobServiceClient.getContainerClient(containerName);
 }
 
 export default class Uploader {
